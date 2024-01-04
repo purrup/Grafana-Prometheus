@@ -1,0 +1,69 @@
+version: '3.8'
+networks:
+  monitoring_network:
+    # 必須先建立建立外部的 network
+    external: true
+    name: monitoring_network
+
+services:
+  prometheus:
+    image: prom/prometheus:v2.45.2
+    container_name: prometheus
+    user: 'root'
+    ports:
+      - 9090:9090
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yaml'
+    volumes:
+      - /www/server/panel/data/compose/monitoring/template/prometheus/prometheus.yaml:/etc/prometheus/prometheus.yaml:ro
+      - /www/docker_volumes/data/prometheus:/prometheus
+    restart: unless-stopped
+    networks:
+      - monitoring_network
+    privileged: true
+  
+  grafana:
+    image: grafana/grafana-oss:latest
+    container_name: grafana
+    user: 'root'
+    ports:
+      - '3333:3000'
+    volumes:
+      - /www/docker_volumes/data/grafana:/var/lib/grafana
+    restart: unless-stopped
+    networks:
+      - monitoring_network
+    privileged: true
+  
+  # 用來監控 cpu, memory...等資源使用情況
+  node_exporter:
+    image: quay.io/prometheus/node-exporter:v1.5.0
+    container_name: node_exporter
+    command: '--path.rootfs=/host'
+    pid: host
+    restart: unless-stopped
+    user: 'root'
+    volumes:
+      - /:/host:ro,rslave
+    networks:
+      - monitoring_network
+  
+  # 用來監控 docker container 資源使用情況
+  cadvisor:
+    image: gcr.io/cadvisor/cadvisor:v0.47.0
+    container_name: cadvisor
+    user: 'root'
+    command:
+      - '-port=8098'
+    volumes:
+      - /:/rootfs:ro
+      - /var/run:/var/run:ro
+      - /sys:/sys:ro
+      - /var/lib/docker/:/var/lib/docker:ro
+      - /dev/disk/:/dev/disk:ro
+    devices:
+      - /dev/kmsg
+    privileged: true
+    restart: unless-stopped
+    networks:
+      - monitoring_network
