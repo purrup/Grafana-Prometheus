@@ -74,3 +74,14 @@ docker network create --driver bridge --subnet=172.21.0.0/16 --gateway=172.21.0.
 
 ## 備註
 - 確保所有服務（包括 Prometheus 和 Grafana）都連接到 `monitoring_network`，以實現網絡間的連通性。
+
+
+## reference
+- [Prometheus](https://prometheus.io/docs/tutorials/getting_started/)
+- [Prometheus Github](https://github.com/vegasbrianc/prometheus)
+- [Apache Pulsar Grafana Dashboard](https://github.com/streamnative/apache-pulsar-grafana-dashboard?tab=readme-ov-file#apache-pulsar-grafana-dashboard)
+- [pulsar monitoring document](https://pulsar.apache.org/docs/3.1.x/deploy-monitoring/)
+- [Run Grafana via Docker Compose](https://grafana.com/docs/grafana/latest/setup-grafana/installation/docker/#run-grafana-via-docker-compose)
+- [How to Set Up Grafana and Prometheus Using Docker](https://dev.to/chafroudtarek/part-1-how-to-set-up-grafana-and-prometheus-using-docker-i47)
+- [如何使用 Pulsar Dashboard 监控](https://mp.weixin.qq.com/s?__biz=MzUyMjkzMjA1Ng==&mid=2247484093&idx=1&sn=2731f74cbd2558ab8b1cb833d01db70e&scene=21#wechat_redirect)
+- 
