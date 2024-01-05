@@ -50,10 +50,13 @@ node_exporter 在宿主機上運行，收集各種系統和硬體相關指標，
 ## 配置和使用
 
 1. **Prometheus 配置**：配置文件 `prometheus.yaml` 定義了 Prometheus 的抓取目標和頻率。在本項目中，它被配置為每15秒從不同服務（包括自身）收集指標。
+   1. name 設置為 `{{ PULSAR_CLUSTER }}` 是因為 pulsar 官方提供的 dashboard 中的資料源都是以 `{{ PULSAR_CLUSTER }}` 作為名稱，因此這邊也使用 `{{ PULSAR_CLUSTER }}` 作為名稱，有可能是要另外設置 variable，但尚未找到在各個 dashboard 中正確設置 `{{ PULSAR_CLUSTER }}` 的方法，因此先使用這種方式。
 
-2. **Grafana 配置**：Grafana 啟動後，需進行數據源（Prometheus）的配置，並根據需求創建或導入儀表板。
-
-3. **查看和分析數據**：在 Grafana 中，用戶可以查看不同服務的性能指標，並進行分析。這有助於快速識別系統瓶頸和性能問題。
+2. **Grafana 配置**：
+   1. 透過 ./grafana/provisioning/datasources/ 資料夾下的 `datasource.yaml` 配置 Prometheus 的數據源。
+   2. 透過 ./grafana/provisioning/dashboards/ 資料夾下的 `dashboard.yaml` 配置要匯入給 Grafana 的儀表板。但因為使用 provisioning 的方式在 Grafana 中匯入儀表板的話，有任何更動都無法直接儲存在 volume data 中，要另外將更動後的 dashboard.json 存回 ./grafana/provisioning/dashboards/ 資料夾下，使用上較不方便，因此 ./grafana/provisioning/dashboards/ 資料夾下的各個 dashboard 就作為匯入時的初始參考，實際使用的 dashborads 還是依據 volume data。
+   3. import 時 {{ PULSAR_CLUSTER }} 選擇 名稱為 `{{ PULSAR_CLUSTER }}` 的 datasource
+      ![alt text](./assets/chrome_lu1VSYS6KP.png)
 
 ## 部屬方式
 
@@ -75,13 +78,11 @@ docker network create --driver bridge --subnet=172.21.0.0/16 --gateway=172.21.0.
 ## 備註
 - 確保所有服務（包括 Prometheus 和 Grafana）都連接到 `monitoring_network`，以實現網絡間的連通性。
 
-
 ## reference
 - [Prometheus](https://prometheus.io/docs/tutorials/getting_started/)
 - [Prometheus Github](https://github.com/vegasbrianc/prometheus)
 - [Apache Pulsar Grafana Dashboard](https://github.com/streamnative/apache-pulsar-grafana-dashboard?tab=readme-ov-file#apache-pulsar-grafana-dashboard)
-- [pulsar monitoring document](https://pulsar.apache.org/docs/3.1.x/deploy-monitoring/)
+- [Pulsar Monitoring Document](https://pulsar.apache.org/docs/3.1.x/deploy-monitoring/)
 - [Run Grafana via Docker Compose](https://grafana.com/docs/grafana/latest/setup-grafana/installation/docker/#run-grafana-via-docker-compose)
 - [How to Set Up Grafana and Prometheus Using Docker](https://dev.to/chafroudtarek/part-1-how-to-set-up-grafana-and-prometheus-using-docker-i47)
 - [如何使用 Pulsar Dashboard 监控](https://mp.weixin.qq.com/s?__biz=MzUyMjkzMjA1Ng==&mid=2247484093&idx=1&sn=2731f74cbd2558ab8b1cb833d01db70e&scene=21#wechat_redirect)
-- 

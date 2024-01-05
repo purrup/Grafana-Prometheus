@@ -44,7 +44,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "{{PULSAR_CLUSTER}}",
+      "datasource": "{{ PULSAR_CLUSTER }}",
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -123,7 +123,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "{{PULSAR_CLUSTER}}",
+      "datasource": "{{ PULSAR_CLUSTER }}",
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -202,7 +202,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "{{PULSAR_CLUSTER}}",
+      "datasource": "{{ PULSAR_CLUSTER }}",
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -281,7 +281,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "{{PULSAR_CLUSTER}}",
+      "datasource": "{{ PULSAR_CLUSTER }}",
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -360,7 +360,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "{{PULSAR_CLUSTER}}",
+      "datasource": "{{ PULSAR_CLUSTER }}",
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -439,7 +439,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "{{PULSAR_CLUSTER}}",
+      "datasource": "{{ PULSAR_CLUSTER }}",
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -518,7 +518,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "{{PULSAR_CLUSTER}}",
+      "datasource": "{{ PULSAR_CLUSTER }}",
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -597,7 +597,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "{{PULSAR_CLUSTER}}",
+      "datasource": "{{ PULSAR_CLUSTER }}",
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -676,7 +676,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "{{PULSAR_CLUSTER}}",
+      "datasource": "{{ PULSAR_CLUSTER }}",
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -713,7 +713,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "datasource": "{{PULSAR_CLUSTER}}",
+          "datasource": "{{ PULSAR_CLUSTER }}",
           "exemplar": false,
           "expr": "sum(pulsar_topics_count{cluster=\"$cluster\",instance=~\"$instance\"}) by (instance)",
           "interval": "",
@@ -757,7 +757,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "{{PULSAR_CLUSTER}}",
+      "datasource": "{{ PULSAR_CLUSTER }}",
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -794,7 +794,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "datasource": "{{PULSAR_CLUSTER}}",
+          "datasource": "{{ PULSAR_CLUSTER }}",
           "exemplar": false,
           "expr": "sum(caffeine_cache_estimated_size{cluster=\"$cluster\",instance=~\"$instance\",cache=~\"owned-bundles\"}) by (instance)",
           "interval": "",
@@ -851,7 +851,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "{{PULSAR_CLUSTER}}",
+      "datasource": "{{ PULSAR_CLUSTER }}",
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -888,7 +888,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "datasource": "{{PULSAR_CLUSTER}}",
+          "datasource": "{{ PULSAR_CLUSTER }}",
           "exemplar": false,
           "expr": "100 *  pulsar_lb_resource_usage{cluster=\"$cluster\",instance=~\"$instance\", feature=\"max_ema\"}",
           "interval": "",
@@ -932,7 +932,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "{{PULSAR_CLUSTER}}",
+      "datasource": "{{ PULSAR_CLUSTER }}",
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -969,7 +969,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "datasource": "{{PULSAR_CLUSTER}}",
+          "datasource": "{{ PULSAR_CLUSTER }}",
           "exemplar": false,
           "expr": "100 * pulsar_lb_resource_usage_stats{cluster=\"$cluster\",instance=~\"$instance\", feature=\"max_ema\", stat=\"avg\"}",
           "interval": "",
@@ -1013,7 +1013,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "{{PULSAR_CLUSTER}}",
+      "datasource": "{{ PULSAR_CLUSTER }}",
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -1050,7 +1050,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "datasource": "{{PULSAR_CLUSTER}}",
+          "datasource": "{{ PULSAR_CLUSTER }}",
           "exemplar": false,
           "expr": "pulsar_lb_resource_usage_stats{cluster=\"$cluster\",instance=~\"$instance\", feature=\"max_ema\", stat=\"std\"}",
           "interval": "",
@@ -1094,7 +1094,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "{{PULSAR_CLUSTER}}",
+      "datasource": "{{ PULSAR_CLUSTER }}",
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -1131,7 +1131,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "datasource": "{{PULSAR_CLUSTER}}",
+          "datasource": "{{ PULSAR_CLUSTER }}",
           "exemplar": false,
           "expr": "pulsar_lb_assign_broker_breakdown_total{cluster=\"$cluster\",instance=~\"$instance\",result=\"Success\"}",
           "interval": "",
@@ -1175,7 +1175,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "{{PULSAR_CLUSTER}}",
+      "datasource": "{{ PULSAR_CLUSTER }}",
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -1212,7 +1212,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "datasource": "{{PULSAR_CLUSTER}}",
+          "datasource": "{{ PULSAR_CLUSTER }}",
           "exemplar": false,
           "expr": "pulsar_lb_assign_broker_breakdown_total{cluster=\"$cluster\",instance=~\"$instance\",result=\"Skip\"}",
           "interval": "",
@@ -1256,7 +1256,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "{{PULSAR_CLUSTER}}",
+      "datasource": "{{ PULSAR_CLUSTER }}",
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -1293,7 +1293,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "datasource": "{{PULSAR_CLUSTER}}",
+          "datasource": "{{ PULSAR_CLUSTER }}",
           "exemplar": false,
           "expr": "pulsar_lb_assign_broker_breakdown_total{cluster=\"$cluster\",instance=~\"$instance\",result=\"Failure\"}",
           "interval": "",
@@ -1337,7 +1337,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "{{PULSAR_CLUSTER}}",
+      "datasource": "{{ PULSAR_CLUSTER }}",
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -1374,7 +1374,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "datasource": "{{PULSAR_CLUSTER}}",
+          "datasource": "{{ PULSAR_CLUSTER }}",
           "exemplar": false,
           "expr": "sum(pulsar_lb_unload_broker_breakdown_total{cluster=\"$cluster\",instance=~\"$instance\",result=\"Success\"}) by (reason)",
           "interval": "",
@@ -1418,7 +1418,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "{{PULSAR_CLUSTER}}",
+      "datasource": "{{ PULSAR_CLUSTER }}",
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -1455,7 +1455,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "datasource": "{{PULSAR_CLUSTER}}",
+          "datasource": "{{ PULSAR_CLUSTER }}",
           "exemplar": false,
           "expr": "sum(pulsar_lb_unload_broker_breakdown_total{cluster=\"$cluster\",instance=~\"$instance\",result=\"Skip\"}) by (reason)",
           "instant": false,
@@ -1500,7 +1500,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "{{PULSAR_CLUSTER}}",
+      "datasource": "{{ PULSAR_CLUSTER }}",
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -1537,7 +1537,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "datasource": "{{PULSAR_CLUSTER}}",
+          "datasource": "{{ PULSAR_CLUSTER }}",
           "exemplar": false,
           "expr": "sum(pulsar_lb_unload_broker_breakdown_total{cluster=\"$cluster\",instance=~\"$instance\",result=\"Failure\"}) by (reason)",
           "interval": "",
@@ -1581,7 +1581,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "{{PULSAR_CLUSTER}}",
+      "datasource": "{{ PULSAR_CLUSTER }}",
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -1618,7 +1618,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "datasource": "{{PULSAR_CLUSTER}}",
+          "datasource": "{{ PULSAR_CLUSTER }}",
           "exemplar": false,
           "expr": "sum(pulsar_lb_bundles_split_breakdown_total{cluster=\"$cluster\",instance=~\"$instance\",result=\"Success\"}) by (reason)",
           "instant": false,
@@ -1663,7 +1663,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "{{PULSAR_CLUSTER}}",
+      "datasource": "{{ PULSAR_CLUSTER }}",
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -1700,7 +1700,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "datasource": "{{PULSAR_CLUSTER}}",
+          "datasource": "{{ PULSAR_CLUSTER }}",
           "exemplar": false,
           "expr": "sum(pulsar_lb_bundles_split_breakdown_total{cluster=\"$cluster\",instance=~\"$instance\",result=\"Skip\"}) by (reason)",
           "interval": "",
@@ -1744,7 +1744,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "{{PULSAR_CLUSTER}}",
+      "datasource": "{{ PULSAR_CLUSTER }}",
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -1781,7 +1781,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "datasource": "{{PULSAR_CLUSTER}}",
+          "datasource": "{{ PULSAR_CLUSTER }}",
           "exemplar": false,
           "expr": "sum(pulsar_lb_bundles_split_breakdown_total{cluster=\"$cluster\",instance=~\"$instance\",result=\"Failure\"}) by (reason)",
           "interval": "",
@@ -1821,7 +1821,7 @@
       }
     },
     {
-      "datasource": "{{PULSAR_CLUSTER}}",
+      "datasource": "{{ PULSAR_CLUSTER }}",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1892,7 +1892,7 @@
       },
       "targets": [
         {
-          "datasource": "{{PULSAR_CLUSTER}}",
+          "datasource": "{{ PULSAR_CLUSTER }}",
           "exemplar": false,
           "expr": "sum(pulsar_lb_bundles_split_breakdown_total{cluster=\"$cluster\",instance=~\"$instance\",result=\"Success\"}) by (instance)",
           "interval": "",
@@ -1904,7 +1904,7 @@
       "type": "graph"
     },
     {
-      "datasource": "{{PULSAR_CLUSTER}}",
+      "datasource": "{{ PULSAR_CLUSTER }}",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1975,7 +1975,7 @@
       },
       "targets": [
         {
-          "datasource": "{{PULSAR_CLUSTER}}",
+          "datasource": "{{ PULSAR_CLUSTER }}",
           "exemplar": false,
           "expr": "sum(pulsar_lb_bundles_split_breakdown_total{cluster=\"$cluster\",instance=~\"$instance\",result=\"Skip\"}) by (instance)",
           "interval": "",
@@ -1987,7 +1987,7 @@
       "type": "graph"
     },
     {
-      "datasource": "{{PULSAR_CLUSTER}}",
+      "datasource": "{{ PULSAR_CLUSTER }}",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -2058,7 +2058,7 @@
       },
       "targets": [
         {
-          "datasource": "{{PULSAR_CLUSTER}}",
+          "datasource": "{{ PULSAR_CLUSTER }}",
           "exemplar": false,
           "expr": "sum(pulsar_lb_bundles_split_breakdown_total{cluster=\"$cluster\",instance=~\"$instance\",result=\"Failure\"}) by (instance)",
           "interval": "",
@@ -2087,7 +2087,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "{{PULSAR_CLUSTER}}",
+      "datasource": "{{ PULSAR_CLUSTER }}",
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -2124,7 +2124,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "datasource": "{{PULSAR_CLUSTER}}",
+          "datasource": "{{ PULSAR_CLUSTER }}",
           "exemplar": false,
           "expr": "sum(increase(pulsar_sunit_state_chn_owner_lookup_total{cluster=\"$cluster\",instance=~\"$instance\",result=\"Total\"} [1m])) by (instance)",
           "interval": "",
@@ -2164,7 +2164,7 @@
       }
     },
     {
-      "datasource": "{{PULSAR_CLUSTER}}",
+      "datasource": "{{ PULSAR_CLUSTER }}",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -2235,7 +2235,7 @@
       },
       "targets": [
         {
-          "datasource": "{{PULSAR_CLUSTER}}",
+          "datasource": "{{ PULSAR_CLUSTER }}",
           "exemplar": false,
           "expr": "sum(increase(pulsar_sunit_state_chn_owner_lookup_total{cluster=\"$cluster\",instance=~\"$instance\",result=\"Failure\"}[1m])) by (instance)",
           "interval": "",
@@ -2247,7 +2247,7 @@
       "type": "graph"
     },
     {
-      "datasource": "{{PULSAR_CLUSTER}}",
+      "datasource": "{{ PULSAR_CLUSTER }}",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -2318,7 +2318,7 @@
       },
       "targets": [
         {
-          "datasource": "{{PULSAR_CLUSTER}}",
+          "datasource": "{{ PULSAR_CLUSTER }}",
           "exemplar": false,
           "expr": "sum(increase(pulsar_sunit_state_chn_owner_lookup_total{cluster=\"$cluster\",instance=~\"$instance\",result=\"Total\"} [1m])) by (state)",
           "interval": "",
@@ -2330,7 +2330,7 @@
       "type": "graph"
     },
     {
-      "datasource": "{{PULSAR_CLUSTER}}",
+      "datasource": "{{ PULSAR_CLUSTER }}",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -2401,7 +2401,7 @@
       },
       "targets": [
         {
-          "datasource": "{{PULSAR_CLUSTER}}",
+          "datasource": "{{ PULSAR_CLUSTER }}",
           "exemplar": false,
           "expr": "sum(increase(pulsar_sunit_state_chn_owner_lookup_total{cluster=\"$cluster\",instance=~\"$instance\",result=\"Failure\"}[1m])) by (state)",
           "interval": "",
@@ -2417,7 +2417,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "{{PULSAR_CLUSTER}}",
+      "datasource": "{{ PULSAR_CLUSTER }}",
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -2454,7 +2454,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "datasource": "{{PULSAR_CLUSTER}}",
+          "datasource": "{{ PULSAR_CLUSTER }}",
           "exemplar": false,
           "expr": "sum(increase(pulsar_sunit_state_chn_event_publish_ops_total{cluster=\"$cluster\",instance=~\"$instance\",result=\"Total\"}[1m])) by (instance)",
           "interval": "",
@@ -2498,7 +2498,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "{{PULSAR_CLUSTER}}",
+      "datasource": "{{ PULSAR_CLUSTER }}",
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -2535,7 +2535,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "datasource": "{{PULSAR_CLUSTER}}",
+          "datasource": "{{ PULSAR_CLUSTER }}",
           "exemplar": false,
           "expr": "sum(increase(pulsar_sunit_state_chn_event_publish_ops_total{cluster=\"$cluster\",instance=~\"$instance\",result=\"Failure\"}[1m])) by (instance)",
           "interval": "",
@@ -2575,7 +2575,7 @@
       }
     },
     {
-      "datasource": "{{PULSAR_CLUSTER}}",
+      "datasource": "{{ PULSAR_CLUSTER }}",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -2646,7 +2646,7 @@
       },
       "targets": [
         {
-          "datasource": "{{PULSAR_CLUSTER}}",
+          "datasource": "{{ PULSAR_CLUSTER }}",
           "exemplar": false,
           "expr": "sum(increase(pulsar_sunit_state_chn_event_publish_ops_total{cluster=\"$cluster\",instance=~\"$instance\",result=\"Total\"} [1m])) by (event)",
           "interval": "",
@@ -2658,7 +2658,7 @@
       "type": "graph"
     },
     {
-      "datasource": "{{PULSAR_CLUSTER}}",
+      "datasource": "{{ PULSAR_CLUSTER }}",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -2754,7 +2754,7 @@
       },
       "targets": [
         {
-          "datasource": "{{PULSAR_CLUSTER}}",
+          "datasource": "{{ PULSAR_CLUSTER }}",
           "exemplar": false,
           "expr": "sum(increase(pulsar_sunit_state_chn_event_publish_ops_total{cluster=\"$cluster\",instance=~\"$instance\",result=\"Failure\"} [1m])) by (event)",
           "interval": "",
@@ -2770,7 +2770,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "{{PULSAR_CLUSTER}}",
+      "datasource": "{{ PULSAR_CLUSTER }}",
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -2807,7 +2807,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "datasource": "{{PULSAR_CLUSTER}}",
+          "datasource": "{{ PULSAR_CLUSTER }}",
           "exemplar": false,
           "expr": "sum(increase(pulsar_sunit_state_chn_subscribe_ops_total{cluster=\"$cluster\",instance=~\"$instance\",result=\"Total\"} [1m])) by (instance)",
           "interval": "",
@@ -2851,7 +2851,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "{{PULSAR_CLUSTER}}",
+      "datasource": "{{ PULSAR_CLUSTER }}",
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -2888,7 +2888,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "datasource": "{{PULSAR_CLUSTER}}",
+          "datasource": "{{ PULSAR_CLUSTER }}",
           "exemplar": false,
           "expr": "sum(increase(pulsar_sunit_state_chn_subscribe_ops_total{cluster=\"$cluster\",instance=~\"$instance\",result=\"Failure\"}[1m] )) by (instance)",
           "interval": "",
@@ -2928,7 +2928,7 @@
       }
     },
     {
-      "datasource": "{{PULSAR_CLUSTER}}",
+      "datasource": "{{ PULSAR_CLUSTER }}",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -2999,7 +2999,7 @@
       },
       "targets": [
         {
-          "datasource": "{{PULSAR_CLUSTER}}",
+          "datasource": "{{ PULSAR_CLUSTER }}",
           "exemplar": false,
           "expr": "sum(increase(pulsar_sunit_state_chn_subscribe_ops_total{cluster=\"$cluster\",instance=~\"$instance\",result=\"Total\"}[1m] )) by (event)",
           "interval": "",
@@ -3011,7 +3011,7 @@
       "type": "graph"
     },
     {
-      "datasource": "{{PULSAR_CLUSTER}}",
+      "datasource": "{{ PULSAR_CLUSTER }}",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -3107,7 +3107,7 @@
       },
       "targets": [
         {
-          "datasource": "{{PULSAR_CLUSTER}}",
+          "datasource": "{{ PULSAR_CLUSTER }}",
           "exemplar": false,
           "expr": "sum(increase(pulsar_sunit_state_chn_subscribe_ops_total{cluster=\"$cluster\",instance=~\"$instance\",result=\"Failure\"}[1m] )) by (event)",
           "interval": "",
@@ -3123,7 +3123,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "{{PULSAR_CLUSTER}}",
+      "datasource": "{{ PULSAR_CLUSTER }}",
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -3160,7 +3160,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "datasource": "{{PULSAR_CLUSTER}}",
+          "datasource": "{{ PULSAR_CLUSTER }}",
           "exemplar": false,
           "expr": "sum(pulsar_sunit_state_chn_inactive_broker_cleanup_ops_total{cluster=\"$cluster\",instance=~\"$instance\"}) by (result)",
           "interval": "",
@@ -3204,7 +3204,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "{{PULSAR_CLUSTER}}",
+      "datasource": "{{ PULSAR_CLUSTER }}",
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -3283,7 +3283,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "{{PULSAR_CLUSTER}}",
+      "datasource": "{{ PULSAR_CLUSTER }}",
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -3362,7 +3362,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "{{PULSAR_CLUSTER}}",
+      "datasource": "{{ PULSAR_CLUSTER }}",
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -3437,7 +3437,7 @@
       }
     },
     {
-      "datasource": "{{PULSAR_CLUSTER}}",
+      "datasource": "{{ PULSAR_CLUSTER }}",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -3508,7 +3508,7 @@
       },
       "targets": [
         {
-          "datasource": "{{PULSAR_CLUSTER}}",
+          "datasource": "{{ PULSAR_CLUSTER }}",
           "exemplar": false,
           "expr": "sum(pulsar_sunit_state_chn_owned_su_total{cluster=\"$cluster\",instance=~\"$instance\"} ) by (instance)",
           "interval": "",
@@ -3532,7 +3532,7 @@
           "text": "All",
           "value": "$__all"
         },
-        "datasource": "{{PULSAR_CLUSTER}}",
+        "datasource": "{{ PULSAR_CLUSTER }}",
         "definition": "{cluster=~\".+\"}",
         "hide": 0,
         "includeAll": true,
@@ -3563,7 +3563,7 @@
             "$__all"
           ]
         },
-        "datasource": "{{PULSAR_CLUSTER}}",
+        "datasource": "{{ PULSAR_CLUSTER }}",
         "definition": "pulsar_lb_memory_usage{cluster=~\"$cluster\", instance=~\".+\"}",
         "hide": 0,
         "includeAll": true,
@@ -3594,7 +3594,7 @@
             "$__all"
           ]
         },
-        "datasource": "{{PULSAR_CLUSTER}}",
+        "datasource": "{{ PULSAR_CLUSTER }}",
         "definition": "caffeine_cache_hit_total{cluster=~\"$cluster\", instance=~\"$instance\"}",
         "hide": 1,
         "includeAll": true,
