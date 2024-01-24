@@ -1,9 +1,9 @@
-# 本地用(windows)
+# 與 25.103 同步
 version: '3.8'
 networks:
-  pulsar_network:
+  monitoring_network:
     external: true
-    name: pulsar_network
+    name: monitoring_network
 
 services:
   prometheus:
@@ -15,11 +15,11 @@ services:
     command:
       - '--config.file=/etc/prometheus/prometheus.yaml'
     volumes:
-      - ./prometheus/prometheus.yaml:/etc/prometheus/prometheus.yaml:ro
-      - ./data/prometheus:/prometheus
+      - /www/server/panel/data/compose/monitoring/template/prometheus/prometheus.yaml:/etc/prometheus/prometheus.yaml:ro
+      - /www/docker_volumes/data/prometheus:/prometheus
     restart: unless-stopped
     networks:
-      - pulsar_network
+      - monitoring_network
     privileged: true
   
   grafana:
@@ -29,11 +29,11 @@ services:
     ports:
       - '3333:3000'
     volumes:
-      - ./data/grafana:/var/lib/grafana
-      - ./grafana/provisioning/:/etc/grafana/provisioning/
+      - /www/docker_volumes/data/grafana:/var/lib/grafana
+      - /www/server/panel/data/compose/monitoring/template/grafana/provisioning/:/etc/grafana/provisioning/
     restart: unless-stopped
     networks:
-      - pulsar_network
+      - monitoring_network
     privileged: true
   
   # 用來監控 cpu, memory...等資源使用情況
@@ -45,9 +45,9 @@ services:
     restart: unless-stopped
     user: 'root'
     volumes:
-      - ./:/host:ro,rslave
+      - /:/host:ro,rslave
     networks:
-      - pulsar_network
+      - monitoring_network
   
   # 用來監控 docker container 資源使用情況
   cadvisor:
@@ -57,7 +57,7 @@ services:
     command:
       - '-port=8098'
     volumes:
-      - ./:/rootfs:ro
+      - /:/rootfs:ro
       - /var/run:/var/run:ro
       - /sys:/sys:ro
       - /var/lib/docker/:/var/lib/docker:ro
@@ -67,4 +67,4 @@ services:
     privileged: true
     restart: unless-stopped
     networks:
-      - pulsar_network
+      - monitoring_network
