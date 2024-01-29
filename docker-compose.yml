@@ -46,10 +46,10 @@ services:
     restart: unless-stopped
     user: 'root'
     volumes:
-      - ./:/host:ro,rslave
+      - /:/host:ro,rslave
     networks:
       - pulsar_network
-    mem_limit: 500m
+    mem_limit: 200m
   
   # 用來監控 docker container 資源使用情況
   cadvisor:
@@ -59,15 +59,16 @@ services:
     command:
       - '-port=8098'
     volumes:
-      - ./:/rootfs:ro
+      - /:/rootfs:ro
       - /var/run:/var/run:ro
       - /sys:/sys:ro
       - /var/lib/docker/:/var/lib/docker:ro
       - /dev/disk/:/dev/disk:ro
+      - /etc/machine-id:/etc/machine-id:ro
     devices:
       - /dev/kmsg
     privileged: true
     restart: unless-stopped
     networks:
       - pulsar_network
-    mem_limit: 500m
+    mem_limit: 200m
