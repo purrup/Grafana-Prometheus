@@ -30,7 +30,7 @@ services:
       - '3333:3000'
     volumes:
       - /www/docker_volumes/data/grafana:/var/lib/grafana
-      - /www/server/panel/data/compose/monitoring/template/grafana/provisioning/:/etc/grafana/provisioning/
+      # - /www/server/panel/data/compose/monitoring/template/grafana/provisioning/:/etc/grafana/provisioning/
     restart: unless-stopped
     networks:
       - monitoring_network
