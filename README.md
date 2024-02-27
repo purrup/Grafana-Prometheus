@@ -50,13 +50,14 @@ node_exporter 在宿主機上運行，收集各種系統和硬體相關指標，
 ## 配置和使用
 
 1. **Prometheus 配置**：配置文件 `prometheus.yaml` 定義了 Prometheus 的抓取目標和頻率。在本項目中，它被配置為每15秒從不同服務（包括自身）收集指標。
-   1. name 設置為 `{{ PULSAR_CLUSTER }}` 是因為 pulsar 官方提供的 dashboard 中的資料源都是以 `{{ PULSAR_CLUSTER }}` 作為名稱，因此這邊也使用 `{{ PULSAR_CLUSTER }}` 作為名稱，有可能是要另外設置 variable，但尚未找到在各個 dashboard 中正確設置 `{{ PULSAR_CLUSTER }}` 的方法，因此先使用這種方式。
+   1. 可以在 dashboaad 中配置一個 variable, e.g. `datasource`， 用來選擇 Prometheus 的數據源，便可用同一個面板查看不同的數據源的數據。 
 
 2. **Grafana 配置**：
-   1. 透過 ./grafana/provisioning/datasources/ 資料夾下的 `datasource.yaml` 配置 Prometheus 的數據源。
-   2. 透過 ./grafana/provisioning/dashboards/ 資料夾下的 `dashboard.yaml` 配置要匯入給 Grafana 的儀表板。但因為使用 provisioning 的方式在 Grafana 中匯入儀表板的話，有任何更動都無法直接儲存在 volume data 中，要另外將更動後的 dashboard.json 存回 ./grafana/provisioning/dashboards/ 資料夾下，使用上較不方便，因此 ./grafana/provisioning/dashboards/ 資料夾下的各個 dashboard 就作為匯入時的初始參考，實際使用的 dashborads 還是依據 volume data。
-   3. import 時 {{ PULSAR_CLUSTER }} 選擇 名稱為 `{{ PULSAR_CLUSTER }}` 的 datasource
-      ![alt text](./assets/chrome_lu1VSYS6KP.png)
+   1. datasource:
+      1. 透過 ./grafana/provisioning/datasources/ 資料夾下的 `datasource.yaml` 配置 Prometheus 的數據源。
+      2. 於 Grafana 中設置 Prometheus 的數據源
+   2. dashboards:
+      1. 透過 ./grafana/provisioning/dashboards/ 資料夾下的 `dashboard.yaml` 配置要匯入給 Grafana 的儀表板。但因為使用 provisioning 的方式在 Grafana 中匯入儀表板的話，有任何更動都無法直接儲存在 volume data 中，要另外將更動後的 dashboard.json 存回 ./grafana/provisioning/dashboards/ 資料夾下，使用上較不方便，因此 ./grafana/provisioning/dashboards/ 資料夾下的各個 dashboard 就作為匯入時的初始參考，實際使用的 dashborads 還是依據 volume data。
 
 ## 部屬方式
 
